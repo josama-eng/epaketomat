@@ -1,0 +1,295 @@
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato-Bold.ttf") format("truetype");
+}
+:root {
+  --white: #fff;
+  --black: #000;
+  --hover: #e99d50;
+  --transition: 0.5s ease;
+  --green: #5bcb4f;
+  --blue: #0096B0;
+  --text: #454545;
+  --bg: #DECDB1;
+  --orange:#ED7117;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato";
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.container {
+  width: 600px;
+  height: 1024px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.header img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.location {
+  color: var(--text);
+  font-size: 23px;
+  font-weight: bold;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+
+.logo img {
+  width: 250px;
+  margin-top: 10px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.service-image {
+  width: 100%;
+    
+}
+.service-image img {
+  width: 40%;
+  object-fit: cover;
+}
+
+
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+}
+.send img,
+.receive img {
+  width: 100%;
+  cursor: pointer;
+
+}
+
+
+.btn {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#couirer {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Postavljanje visine na celu visinu ekrana */
+  display: none;
+}
+
+#home {
+  display: contents;
+}
+
+.courier-logo {
+  width: 100%;
+  position: absolute;
+  top: 100px; /* Postavite koliko je potrebno od vrha */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.qr-instruction {
+  margin-top: 60px;
+  font-size: 35px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.log-out {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.log-out img {
+  width: 50px; /* Prilagodite velicinu slike */
+  height: auto;
+}
+
+.log-out-counter {
+  margin-left: 10px;
+  color: var(--text);
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.package-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--orange);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--white);
+  box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
+-webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
+-moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
+}
+
+
+.package-info h3 {
+  padding: 10px 0;
+}
+
+.package-capacity{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  position: absolute;
+  bottom: 150px;
+  text-align: center;
+}
+.all,
+.free {
+  background: var(--orange);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--white);
+  box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
+-webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
+-moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
+}
+
+.package-capacity h3 {
+  padding: 10px 0;
+}
+
+#pin-overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#timer { 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: black;
+}
+
+#pin-message { font-size: 22px; margin-bottom: 10px; }
+#entered-pin { font-size: 24px; font-weight: bold; min-height: 30px; }
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.keypad button {
+  width: 80px; height: 80px;
+  font-size: 24px;
+  background: white;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.keypad button.active { background: #0055ff; color: white; }
+
+#close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+select {
+  padding: 10px;
+  border-radius: 5px;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 20px;
+}
+select:focus {
+  outline: none;
+}
+option {
+  background-repeat: no-repeat;
+  background-size: 20px 15px;
+  padding-left: 25px;
+  background: var(--white);
+  color: var(--text);
+  border: none;
+}
+

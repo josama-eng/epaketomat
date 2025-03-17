@@ -71,7 +71,7 @@ function startTimer() {
 
 
 function resetTimer() {
-    let countdown = 30;
+    let countdown = 300;
     document.getElementById("timer").innerText = countdown;
     clearInterval(timer);
     timer = setInterval(() => {

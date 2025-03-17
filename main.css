@@ -28,6 +28,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 body {
@@ -105,7 +113,6 @@ body {
 .send img,
 .receive img {
   width: 100%;
-  cursor: pointer;
 
 }
 
@@ -219,33 +226,46 @@ body {
   text-align: center;
 }
 
+.progres-bar {
+  background-color: #004185;
+  height: 4px;
+  width: 100%;
+  animation: grow 30s linear infinite;
+  transform-origin: left;
+  position: fixed;
+  top: 1px;
+}
 #timer { 
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 20px;
-  color: black;
+  font-size: 24px;
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  border-radius: 50%;
+  padding-top: 12px;
+  border: 3px solid #004185;
+  margin: 0 auto;
 }
 
-#pin-message { font-size: 22px; margin-bottom: 10px; }
-#entered-pin { font-size: 24px; font-weight: bold; min-height: 30px; }
+
+#pin-message { font-size: 42px; margin-bottom: 10px; }
+#entered-pin { font-size: 44px; font-weight: bold; min-height: 52px; }
 
 .keypad {
   display: grid;
-  grid-template-columns: repeat(3, 80px);
+  grid-template-columns: repeat(3, 150px);
   gap: 10px;
   margin-top: 20px;
 }
 
 .keypad button {
-  width: 80px; height: 80px;
-  font-size: 24px;
+  width: 150px;
+  height: 150px;
+  font-size: 74px;
   background: white;
   border: 2px solid #ccc;
-  cursor: pointer;
 }
 
-.keypad button.active { background: #0055ff; color: white; }
+.keypad button:active { background: #003375; color: white; }
 
 #close-btn {
   margin-top: 20px;
@@ -253,7 +273,6 @@ body {
   background: var(--blue);
   color: white;
   border: none;
-  cursor: pointer;
 }
 
 .select-container {
@@ -278,7 +297,6 @@ select {
   color: var(--white);
   border-radius: 0.25em;
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   font-size: 20px;
 }
 select:focus {
@@ -293,3 +311,8 @@ option {
   border: none;
 }
 
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+}

@@ -18,10 +18,10 @@
   --hover: #e99d50;
   --transition: 0.5s ease;
   --green: #5bcb4f;
-  --blue: #0096B0;
+  --blue: #0096b0;
   --text: #454545;
-  --bg: #DECDB1;
-  --orange:#ED7117;
+  --bg: #decdb1;
+  --orange: #ed7117;
 }
 
 * {
@@ -44,7 +44,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .container {
   width: 600px;
@@ -78,7 +77,6 @@ body {
   word-wrap: break-word;
 }
 
-
 .logo img {
   width: 250px;
   margin-top: 10px;
@@ -95,14 +93,11 @@ body {
 
 .service-image {
   width: 100%;
-    
 }
 .service-image img {
   width: 40%;
   object-fit: cover;
 }
-
-
 
 .buttons {
   display: flex;
@@ -113,9 +108,7 @@ body {
 .send img,
 .receive img {
   width: 100%;
-
 }
-
 
 .btn {
   width: 100%;
@@ -179,17 +172,16 @@ body {
   padding: 10px 20px;
   border-radius: 10px;
   color: var(--white);
-  box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
--webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
--moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
+  box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.42);
 }
-
 
 .package-info h3 {
   padding: 10px 0;
 }
 
-.package-capacity{
+.package-capacity {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -204,9 +196,9 @@ body {
   padding: 10px 20px;
   border-radius: 10px;
   color: var(--white);
-  box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
--webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
--moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.42);
+  box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.42);
 }
 
 .package-capacity h3 {
@@ -214,9 +206,9 @@ body {
 }
 
 #pin-overlay {
-    display: flex;
+  display: flex;
   justify-content: space-between;
-    width: 100%;
+  width: 100%;
   display: none;
   position: absolute;
   width: 100%;
@@ -228,8 +220,7 @@ body {
   justify-content: center;
   text-align: center;
 }
-:where([autocomplete=one-time-code]) {
-      
+:where([autocomplete="one-time-code"]) {
   --otp-digits: 6;
   --otp-ls: 2ch;
   --otp-gap: 1.25;
@@ -239,14 +230,16 @@ body {
   --_otp-digit: 0;
 
   all: unset;
-  background: 
-  linear-gradient(90deg, 
-    var(--otp-bg, #BBB) calc(var(--otp-gap) * var(--otp-ls)),
-    transparent 0),
-    linear-gradient(90deg, 
-    var(--otp-bg, #EEE) calc(var(--otp-gap) * var(--otp-ls)),
-    transparent 0
-  );
+  background: linear-gradient(
+      90deg,
+      var(--otp-bg, #bbb) calc(var(--otp-gap) * var(--otp-ls)),
+      transparent 0
+    ),
+    linear-gradient(
+      90deg,
+      var(--otp-bg, #eee) calc(var(--otp-gap) * var(--otp-ls)),
+      transparent 0
+    );
   background-position: calc(var(--_otp-digit) * var(--_otp-bgsz)) 0, 0 0;
   background-repeat: no-repeat, repeat-x;
   background-size: var(--_otp-bgsz) 100%;
@@ -258,6 +251,19 @@ body {
   letter-spacing: var(--otp-ls);
   padding-block: var(--otp-pb, 1ch);
   padding-inline-start: calc(((var(--otp-ls) - 1ch) / 2) * var(--otp-gap));
+}
+
+/* kod iz html */
+
+.input-num-keypad-wrap {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.input-number input {
+  text-align: left;
 }
 
 /* For this demo */
@@ -276,7 +282,7 @@ label span {
   position: fixed;
   top: 1px;
 }
-#timer { 
+#timer {
   font-size: 60px;
   height: 150px;
   width: 150px;
@@ -287,9 +293,15 @@ label span {
   margin: 0 auto;
 }
 
-
-#pin-message { font-size: 42px; margin-bottom: 10px; }
-#entered-pin { font-size: 44px; font-weight: bold; min-height: 52px; }
+#pin-message {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+#entered-pin {
+  font-size: 44px;
+  font-weight: bold;
+  min-height: 52px;
+}
 
 .keypad {
   display: grid;
@@ -301,12 +313,19 @@ label span {
 .keypad button {
   width: 150px;
   height: 150px;
-  font-size: 74px;
-  background: white;
+  
+  /*  */
   border: 2px solid #ccc;
 }
+.digitBtn {
+  background: white;
+  font-size: 74px;
+}
 
-.keypad button:active { background: #003375; color: white; }
+.keypad button:active {
+  background: #003375;
+  color: white;
+}
 
 #close-btn {
   margin-top: 20px;
@@ -316,40 +335,96 @@ label span {
   border: none;
 }
 
-.select-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-
-}
-
-select {
-  padding: 10px;
-  border-radius: 5px;
-  appearance: none;
-  border: 0;
-  outline: 0;
-  font: inherit;
-  width: 20rem;
-  padding: 1rem 4rem 1rem 1rem;
-  background: var(--blue);
-  color: var(--white);
-  border-radius: 0.25em;
-  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
-  font-size: 20px;
-}
-select:focus {
-  outline: none;
-}
-option {
-  background-repeat: no-repeat;
-  background-size: 20px 15px;
-  padding-left: 25px;
-  background: var(--white);
-  color: var(--text);
+.deleteDigit {
+  font-size: 37px;
+  background-color: red;
+  color: white;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.confirmBtn {
+  font-size: 37px;
+  background-color: green;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+} 
+
+span img {
+  width: 80px;
+  height: 80px;
+}
+
+#openPopup {
+  width: 250px;
+  height: 50px;
+  background: #66B1E2;
+  border: none;
+  border-radius: 10px;
+  font-size: 30px;
+  color: var(--white);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+  z-index: 1000;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1001;
+}
+.popup h3 {
+  font-size: 45px;
+  padding: 10px 0;
+}
+#languageList {
+  font-size: 40px;
+  color: var(--text);
+}
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.language-option img {
+  width: 40px;
+  height: 40px;
+}
+
+.selected-language {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 30px;
+}
+.selected-language img {
+  width: 30px;
+  height: 30px;
 }
 
 @keyframes grow {

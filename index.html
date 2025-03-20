@@ -20,14 +20,25 @@
         <img src="images/2.png" alt="" />
       </div>
 
-      <div class="select-container">
-        <label for="language">Izaberite jezik:</label>
-        <select id="language" onchange="showSelection()">
-          <option value="en">🇺🇸 English</option>
-          <option value="sr">🇷🇸 Srpski</option>
-          <option value="mk">🇲🇰 Македонски</option>
-        </select>
-      </div>
+      <button id="openPopup">Izaberi jezik</button>
+      <div class="selected-language" id="selectedLanguageDisplay">
+        <img src="images/icons8-serbia-48.png" alt="Srpska zastava"> <span>Srpski</span>
+    </div>
+    <div class="popup-overlay" id="overlay"></div>
+    <div class="popup" id="popup" style="display: none;">
+        <h3>Odaberi jezik</h3>
+        <div id="languageList">
+            <div class="language-option" data-lang="Srpski" data-flag="images/icons8-serbia-48.png">
+                <img src="images/icons8-serbia-48.png" alt="Srpska zastava"> Srpski
+            </div>
+            <div class="language-option" data-lang="Engleski" data-flag="images/icons8-united-states-48.png">
+                <img src="images/icons8-united-states-48.png" alt="Engleska zastava"> Engleski
+            </div>
+            <div class="language-option" data-lang="Makedonski" data-flag="images/icons8-north-macedonia-48.png">
+                <img src="images/icons8-north-macedonia-48.png" alt="Makedonska zastava"> Makedonski
+            </div>
+        </div>
+    </div>
 
       <div class="service">
         <div class="service-image">
@@ -45,6 +56,7 @@
       </div>
     </div>
     <!-- KAKO SI MI :) -->
+     <!-- kotrljam :D -->
     <div id="couirer">
       <div class="courier-logo">
         <img src="images/1.png" alt="">
@@ -90,45 +102,39 @@
       <div id="timer">30</div>
       <div id="pin-message">Unesite PIN koji ste dobili</div>
       <!-- sta radis -->
-      <div class="input-num-keypad-wrap" style="    display: flex  ;
-          flex-direction: column;
-          align-content: flex-start;
-          flex-wrap: wrap;">
+      <div class="input-num-keypad-wrap">
         <div class="input-number">
 
           <input type="text" id="entered-pin" autocomplete="one-time-code" inputmode="numeric" maxlength="6"
-            pattern="\d{6}" style="text-align: left">
+            pattern="\d{6}">
 
         </div>
         <div class="keypad">
-          <button onclick="enterDigit(1)">1</button>
-          <button onclick="enterDigit(2)">2</button>
-          <button onclick="enterDigit(3)">3</button>
-          <button onclick="enterDigit(4)">4</button>
-          <button onclick="enterDigit(5)">5</button>
-          <button onclick="enterDigit(6)">6</button>
-          <button onclick="enterDigit(7)">7</button>
-          <button onclick="enterDigit(8)">8</button>
-          <button onclick="enterDigit(9)">9</button>
-          <button onclick="deleteDigit()" style="font-size: 37px;
-              padding: 23px;
-              background-color: red;
-              color: white;
-              border: none;
-              display: flex
-          ;
-              align-items: center;
-              gap: 10px;
-              cursor: pointer;
-              flex-direction: column;">
-            <span style="color: white;">❌</span> 
+          <button onclick="enterDigit(1)" class="digitBtn">1</button>
+          <button onclick="enterDigit(2)" class="digitBtn">2</button>
+          <button onclick="enterDigit(3)" class="digitBtn">3</button>
+          <button onclick="enterDigit(4)" class="digitBtn">4</button>
+          <button onclick="enterDigit(5)" class="digitBtn">5</button>
+          <button onclick="enterDigit(6)" class="digitBtn">6</button>
+          <button onclick="enterDigit(7)" class="digitBtn">7</button>
+          <button onclick="enterDigit(8)" class="digitBtn">8</button>
+          <button onclick="enterDigit(9)" class="digitBtn">9</button>
+          <button onclick="deleteDigit()" class="deleteDigit">
+            <span>
+              <img src="images/icons8-cancel-64.png" alt="">
+            </span> 
+            <span>Obriši</span>
             <!-- treba ikona -->
-            Obriši</button>
-          <button onclick="enterDigit(0)">0</button>
-          <button onclick="submitPin()"
-            style="font-size: 30px; padding: 2px; background-color: green; color: white; border: none;display: flex; align-items: center; gap: 10px; cursor: pointer;">
-            ✔
-            Potvrdi
+            </button>
+          <button onclick="enterDigit(0)" class="digitBtn">0</button>
+          <button onclick="submitPin()" class="confirmBtn"
+            >
+            <span>
+              <img src="images/icons8-check-48.png" alt="">
+            </span> 
+            <span>Potvrdi</span>
+            
+            
             
             <!-- treba ikona -->
           </button>
@@ -136,7 +142,6 @@
 
       </div>
 
-      <!-- <button id="close-btn" onclick="closeOverlay()">Zatvori</button> -->
     </div>
   </div>
 

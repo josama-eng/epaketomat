@@ -113,3 +113,33 @@ function showSelection() {
 }
 
 input.addEventListener('input', () => input.style.setProperty('--_otp-digit', input.selectionStart));
+
+// odabir jezika
+let selectedLanguage = "Srpski";
+let selectedFlag = "https://flagcdn.com/w40/rs.png";
+const overlay = document.getElementById("overlay");
+const popup = document.getElementById("popup");
+const openPopupBtn = document.getElementById("openPopup");
+const languageOptions = document.querySelectorAll(".language-option");
+const selectedLanguageDisplay = document.getElementById("selectedLanguageDisplay");
+
+openPopupBtn.addEventListener("click", () => {
+    overlay.style.display = "block";
+    popup.style.display = "block";
+});
+
+languageOptions.forEach(option => {
+    option.addEventListener("click", () => {
+        selectedLanguage = option.getAttribute("data-lang");
+        selectedFlag = option.getAttribute("data-flag");
+        Swal.fire({
+            title: `Odabrali ste: ${selectedLanguage}`,
+            icon: "success",
+            confirmButtonText: "Potvrdi"
+        }).then(() => {
+            overlay.style.display = "none";
+            popup.style.display = "none";
+            selectedLanguageDisplay.innerHTML = `<img src="${selectedFlag}" alt="${selectedLanguage} zastava"> <span>${selectedLanguage}</span>`;
+        });
+    });
+});

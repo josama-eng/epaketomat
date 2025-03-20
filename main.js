@@ -1,4 +1,5 @@
 
+const input = document.querySelector('[autocomplete=one-time-code');
 function showAlert() {
     Swal.fire ({
         title: 'Uspeh',
@@ -22,7 +23,8 @@ function openPinOverlay() {
 }
 
 function updatePinDisplay() {
-    document.getElementById("entered-pin").innerText = pin;
+    document.getElementById("entered-pin").value = pin;
+    input.style.setProperty('--_otp-digit', input.selectionStart)
 }
 
 function enterDigit(digit) {
@@ -109,3 +111,5 @@ function showSelection() {
         icon: 'success'
     });
 }
+
+input.addEventListener('input', () => input.style.setProperty('--_otp-digit', input.selectionStart));

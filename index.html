@@ -1,65 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="libs/sweetalert2.css" />
-    <link rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <img src="images/icons8-location-50(4).png" alt="" />
-        <p class="location">Ep-0 Test Nehruova 51a</p>
-      </div>
-      <div id="home">
-        <div class="logo">
-          <img src="images/2.png" alt="" />
-        </div>
 
-        <div class="select-container">
-            <label for="language">Izaberite jezik:</label>
-            <select id="language" onchange="showSelection()">
-                <option value="en">🇺🇸 English</option>
-                <option value="sr">🇷🇸 Srpski</option>
-                <option value="mk">🇲🇰 Македонски</option>
-            </select>
-        </div>
-    
-        <div class="service">
-          <div class="service-image">
-            <img src="images/24-7.svg" alt="" />
-          </div>
-        </div>
-        <div class="buttons">
-          <div class="btn send" onclick="openPinOverlay()">
-            <img src="images/posalji-paket.png" alt="" />
-          </div>
-          <!-- Mesto za "Preuzmi paket" sliku -->
-          <div class="btn receive" onclick="takePackage()">
-            <img src="images/preuzmi-paket.png" alt="" />
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="libs/sweetalert2.css" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="images/icons8-location-50(4).png" alt="" />
+      <p class="location">Ep-0 Test Nehruova 51a</p>
+    </div>
+    <div id="home">
+      <div class="logo">
+        <img src="images/2.png" alt="" />
+      </div>
+
+      <div class="select-container">
+        <label for="language">Izaberite jezik:</label>
+        <select id="language" onchange="showSelection()">
+          <option value="en">🇺🇸 English</option>
+          <option value="sr">🇷🇸 Srpski</option>
+          <option value="mk">🇲🇰 Македонски</option>
+        </select>
+      </div>
+
+      <div class="service">
+        <div class="service-image">
+          <img src="images/24-7.svg" alt="" />
         </div>
       </div>
-      <!-- KAKO SI MI :) -->
-      <div id="couirer">
-        <div class="courier-logo">
-            <img src="images/1.png" alt="">
-            <div>
-                <h3 class="qr-instruction">Skenirajte barkod pošiljku</h3>
-            </div>
+      <div class="buttons">
+        <!-- Mesto za "Preuzmi paket" sliku -->
+        <div class="btn receive" onclick="openPinOverlay()">
+          <img src="images/preuzmi-paket.png" alt="" />
         </div>
+        <div class="btn send" onclick="takePackage()">
+          <img src="images/posalji-paket.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- KAKO SI MI :) -->
+    <div id="couirer">
+      <div class="courier-logo">
+        <img src="images/1.png" alt="">
+        <div>
+          <h3 class="qr-instruction">Skenirajte barkod pošiljku</h3>
+        </div>
+      </div>
 
-       <div class="package-info">
+      <div class="package-info">
         <p>Pošiljke za vraćanje: <span>1</span> </p>
         <h3>Pokreni vraćanje pošiljke</h3>
-       </div>
+      </div>
 
-       <div class="package-capacity">
-          <!-- ze zad -->
+      <div class="package-capacity">
+        <!-- ze zad -->
         <!-- <div class="all"> -->
-          <!-- <h3>Ukupno pošiljaka</h3>
+        <!-- <h3>Ukupno pošiljaka</h3>
           <div>
             <p>Mali: <span>22</span> </p>
             <p>Srednji: <span>2</span> </p>
@@ -74,42 +76,73 @@
             <p>Veliki: <span>2</span> </p>
           </div>
         </div>
-       </div>
-       
-        <div class="log-out" onclick="takePackage()">
-            <img src="images/user-logout-5866.png" alt="">
-            <div class="log-out-counter">
-                <h3>90</h3>
-            </div>
+      </div>
+
+      <div class="log-out" onclick="takePackage()">
+        <img src="images/user-logout-5866.png" alt="">
+        <div class="log-out-counter">
+          <h3>90</h3>
         </div>
       </div>
-      <div id="pin-overlay">
-        <div class="progres-bar" id="progres-bar"></div>
-        <div id="timer">30</div>
-        <div id="pin-message">Unesite PIN koji ste dobili</div>
-        <div id="entered-pin"></div>
-        
-        <div class="keypad">
-            <button onclick="enterDigit(1)">1</button>
-            <button onclick="enterDigit(2)">2</button>
-            <button onclick="enterDigit(3)">3</button>
-            <button onclick="enterDigit(4)">4</button>
-            <button onclick="enterDigit(5)">5</button>
-            <button onclick="enterDigit(6)">6</button>
-            <button onclick="enterDigit(7)">7</button>
-            <button onclick="enterDigit(8)">8</button>
-            <button onclick="enterDigit(9)">9</button>
-            <button onclick="deleteDigit()" style="font-size: 64px; background-color: red; color: white;">&lt;&lt;</button>
-            <button onclick="enterDigit(0)">0</button>
-            <button onclick="submitPin()" style="font-size: 44px; background-color: green; color: white;">Potvrdi</button>
+    </div>
+    <div id="pin-overlay">
+      <div class="progres-bar" id="progres-bar"></div>
+      <div id="timer">30</div>
+      <div id="pin-message">Unesite PIN koji ste dobili</div>
+      <!-- sta radis -->
+      <div class="input-num-keypad-wrap" style="    display: flex  ;
+          flex-direction: column;
+          align-content: flex-start;
+          flex-wrap: wrap;">
+        <div class="input-number">
+
+          <input type="text" id="entered-pin" autocomplete="one-time-code" inputmode="numeric" maxlength="6"
+            pattern="\d{6}" style="text-align: left">
+
         </div>
-        
-        <!-- <button id="close-btn" onclick="closeOverlay()">Zatvori</button> -->
+        <div class="keypad">
+          <button onclick="enterDigit(1)">1</button>
+          <button onclick="enterDigit(2)">2</button>
+          <button onclick="enterDigit(3)">3</button>
+          <button onclick="enterDigit(4)">4</button>
+          <button onclick="enterDigit(5)">5</button>
+          <button onclick="enterDigit(6)">6</button>
+          <button onclick="enterDigit(7)">7</button>
+          <button onclick="enterDigit(8)">8</button>
+          <button onclick="enterDigit(9)">9</button>
+          <button onclick="deleteDigit()" style="font-size: 37px;
+              padding: 23px;
+              background-color: red;
+              color: white;
+              border: none;
+              display: flex
+          ;
+              align-items: center;
+              gap: 10px;
+              cursor: pointer;
+              flex-direction: column;">
+            <span style="color: white;">❌</span> 
+            <!-- treba ikona -->
+            Obriši</button>
+          <button onclick="enterDigit(0)">0</button>
+          <button onclick="submitPin()"
+            style="font-size: 30px; padding: 2px; background-color: green; color: white; border: none;display: flex; align-items: center; gap: 10px; cursor: pointer;">
+            ✔
+            Potvrdi
+            
+            <!-- treba ikona -->
+          </button>
+        </div>
+
+      </div>
+
+      <!-- <button id="close-btn" onclick="closeOverlay()">Zatvori</button> -->
     </div>
-    </div>
+  </div>
 
 
-    <script src="libs/sweetalert2.js"></script>
-    <script src="main.js"></script>
-  </body>
+  <script src="libs/sweetalert2.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>

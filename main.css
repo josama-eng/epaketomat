@@ -214,6 +214,9 @@ body {
 }
 
 #pin-overlay {
+    display: flex;
+  justify-content: space-between;
+    width: 100%;
   display: none;
   position: absolute;
   width: 100%;
@@ -225,7 +228,45 @@ body {
   justify-content: center;
   text-align: center;
 }
+:where([autocomplete=one-time-code]) {
+      
+  --otp-digits: 6;
+  --otp-ls: 2ch;
+  --otp-gap: 1.25;
 
+  /* private consts */
+  --_otp-bgsz: calc(var(--otp-ls) + 1ch);
+  --_otp-digit: 0;
+
+  all: unset;
+  background: 
+  linear-gradient(90deg, 
+    var(--otp-bg, #BBB) calc(var(--otp-gap) * var(--otp-ls)),
+    transparent 0),
+    linear-gradient(90deg, 
+    var(--otp-bg, #EEE) calc(var(--otp-gap) * var(--otp-ls)),
+    transparent 0
+  );
+  background-position: calc(var(--_otp-digit) * var(--_otp-bgsz)) 0, 0 0;
+  background-repeat: no-repeat, repeat-x;
+  background-size: var(--_otp-bgsz) 100%;
+  caret-color: var(--otp-cc, #222);
+  caret-shape: block;
+  clip-path: inset(0% calc(var(--otp-ls) / 2) 0% 0%);
+  font-size: var(--otp-fz, 2.5em);
+  inline-size: calc(var(--otp-digits) * var(--_otp-bgsz));
+  letter-spacing: var(--otp-ls);
+  padding-block: var(--otp-pb, 1ch);
+  padding-inline-start: calc(((var(--otp-ls) - 1ch) / 2) * var(--otp-gap));
+}
+
+/* For this demo */
+label span {
+  display: block;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  margin-block-end: 1ch;
+}
 .progres-bar {
   background-color: #004185;
   height: 4px;
@@ -236,12 +277,12 @@ body {
   top: 1px;
 }
 #timer { 
-  font-size: 24px;
-  height: 70px;
-  width: 70px;
+  font-size: 60px;
+  height: 150px;
+  width: 150px;
   text-align: center;
   border-radius: 50%;
-  padding-top: 12px;
+  padding-top: 35px;
   border: 3px solid #004185;
   margin: 0 auto;
 }
